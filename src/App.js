@@ -1,21 +1,43 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import Paginate from './Pagination/Paginate.js';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+class UserListingComponent extends React.Component
+{
+
+    constructor(props)
+    {
+        super(props);
+        this.state = {
+            items: [
+                {
+                    name: "subesh1"
+                }, {
+                    name: "subesh2"
+                }, {
+                    name: "subesh3"
+                }, {
+                    name: "subesh4"
+                }, {
+                    name: "subesh5"
+                }, {
+                    name: "subesh6"
+                }, {
+                    name: "subesh7"
+                }, {
+                    name: "pokhrel8"
+                }/**/
+            ]
+        };
+    }
+
+    render()
+    {
+        return <div className="wrapper">
+            <Paginate items={this.state.items}/>
+        </div>
+
+    }
+
 }
 
-export default App;
+export default UserListingComponent;
